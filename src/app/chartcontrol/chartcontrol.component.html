@@ -1,0 +1,7 @@
+<app-chart [data]='data' [timesUpdated]='timesUpdated'></app-chart>
+
+From: <dp-date-picker mode='month' [(ngModel)]='from_date' (onChange)="printDates()"></dp-date-picker> 
+
+To :  <dp-date-picker mode='month' [(ngModel)]='to_date' (onChange)="printDates()"></dp-date-picker>
+<button (click)="printDates()">See times</button>
+
