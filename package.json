@@ -27,7 +27,7 @@
     "ng2-charts": "^1.6.0",
     "ng2-date-picker": "^2.7.4-alpha",
     "rxjs": "^5.5.6",
-    "typescript":"~5.9.1",
+    "typescript":"~2.5.3",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
