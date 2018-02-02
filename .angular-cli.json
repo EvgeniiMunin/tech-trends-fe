@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
+        "ajax-loader.gif",
         "404.html",
         "favicon.ico"
       ],
