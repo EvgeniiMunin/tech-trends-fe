@@ -51,6 +51,7 @@ export class ChartComponent implements OnInit, AfterViewInit, OnChanges {
         this.myChart.data = this.data;
         this.myChart.update();
     } else {console.log('wait...')}
+    console.log(this)
   }
 
 
@@ -59,9 +60,10 @@ export class ChartComponent implements OnInit, AfterViewInit, OnChanges {
   /** 
    * CHANGE CONTROL FOR DATES
    **/
-   ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges) {
       this.updateChart();
-    }
+  }
+
 }   
 
 

@@ -1,9 +1,11 @@
-<p *ngIf="!loaded">Loading...</p>
+<div *ngIf="!loaded">
+    <br><br>
+    <img src="/assets/ajax-loader.gif">
+    <br><br>
+    Loading...
+    <br><br><br>
+</div>
 <div [hidden]="!loaded" style="text-align:center">
     <canvas baseChart id="myChart" width="1400" height="400"></canvas>
 </div>
-<div>
-  <button (click)="updateChart()">Update</button>
-</div>
-
 

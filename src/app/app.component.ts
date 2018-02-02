@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tech-Trends';
-  subtitle = 'PIE 71 | ISAE-SUPAERO';
+  title = 'TECH-TRENDS';
+  subtitle = 'PIE 71-2018 | ISAE-SUPAERO';
 }

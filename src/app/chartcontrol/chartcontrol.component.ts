@@ -14,9 +14,9 @@ import { QueryService } from '../query.service';
 })
 export class ChartcontrolComponent implements OnInit {
   entries: Entry[] = [];
-  tags: string[] = ['solid','plasma'];
+  tags: string[] = ['solid','plasma','electric'];
 
-  from_date: any = { _d: new Date('2017-01-01')};
+  from_date: any = { _d: new Date('2016-12-01')};
   to_date: any = {_d : new Date('2017-12-31')};
 
 data = {
