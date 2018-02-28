@@ -17,7 +17,7 @@ export class Entry {
         this.tstamp = res.tstamp;
         this.url = res.url;
         this.title = res.title;
-        this.author = res.author;
+        this.date = res.date;
         this.brief = res.brief;
         this.body = res.body;
         this.source = res.source;
