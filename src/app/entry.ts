@@ -6,8 +6,8 @@ export class Entry {
     tstamp: string;
     url: string;
     title: string;
-    author: string; 
     brief: string;
+    date: string;
     body: string;
     source: string;
     tag: string[];
