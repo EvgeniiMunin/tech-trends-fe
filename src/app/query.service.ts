@@ -11,7 +11,8 @@ export class QueryService {
 
     
   constructor(private http: HttpClient) { }
-    private url = "https://polar-forest-63120.herokuapp.com/"
+//    private url = "https://polar-forest-63120.herokuapp.com/"
+    private url = "http://localhost:8000/"
     
 
     getAll(): Observable<any[]> {
