@@ -127,7 +127,7 @@ data = {
         for (let j=0; j<this.entries.length; j++) {
           if (this.entries[j].tag && this.entries[j].tag.includes(tag)) {
 
-              let artDate = parseDate(this.entries[j].tstamp);
+              let artDate = parseDate(this.entries[j].date);
               if (artDate.month == i+1 && artDate.year == start.year) {accum++;}
           }
         }
@@ -143,7 +143,7 @@ data = {
           for (let j=0; j<this.entries.length; j++) {
             if (this.entries[j].tag && this.entries[j].tag.includes(tag)) {
 
-              let artDate = parseDate(this.entries[j].tstamp);
+              let artDate = parseDate(this.entries[j].date);
               if (artDate.month == i+1 && artDate.year == y) {accum++;}
             }
           }
@@ -159,7 +159,7 @@ data = {
         for (let j=0; j<this.entries.length; j++) {
           if (this.entries[j].tag && this.entries[j].tag.includes(tag)) {
 
-            let artDate = parseDate(this.entries[j].tstamp);
+            let artDate = parseDate(this.entries[j].date);
             if (artDate.month == i+1 && artDate.year == end.year) {accum++;}
           }
         }
