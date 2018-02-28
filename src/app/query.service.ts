@@ -15,8 +15,11 @@ export class QueryService {
     private url = "http://localhost:8000/"
     
 
-    getAll(): Observable<any[]> {
+    getAll(company_name): Observable<any[]> {
 //        return of(ENTRIES);
+        if (company_name) {
+          return this.http.get<any[]>(this.url + 'newsarticles/?company__in=' + company_name);
+        }
         return this.http.get<any[]>(this.url + 'newsarticles/');
     }
 

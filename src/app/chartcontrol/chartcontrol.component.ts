@@ -14,7 +14,8 @@ import { QueryService } from '../query.service';
 })
 export class ChartcontrolComponent implements OnInit {
   entries: Entry[] = [];
-  tags: string[] = ['solid','plasma','electric'];
+  tags: string[] = ['solid','plasma','SSTO','liquid'];
+  company_name: string = '';
 
   from_date: any = { _d: new Date('2016-12-01')};
   to_date: any = {_d : new Date('2017-12-31')};
@@ -41,7 +42,6 @@ data = {
 
   ngOnInit() {
     this.getAll();
-    this.preProcessByTag(this.tags);
   }
 
 /**
@@ -85,11 +85,12 @@ data = {
  * GET EVERYTHING
  **/
   getAll(): void {
-    let response = this.queryService.getAll()
+    let response = this.queryService.getAll(this.company_name)
         .subscribe(entries => {
             this.entries = entries;
             this.preProcessByTag(this.tags);
         });
+
   }
 
 
@@ -124,10 +125,10 @@ data = {
       for (let i=start.month; i<lastmonth; i++) {
         let accum = 0;
         for (let j=0; j<this.entries.length; j++) {
-          if (this.entries[j].tag.includes(tag)) {
+          if (this.entries[j].tag && this.entries[j].tag.includes(tag)) {
 
-            let artDate = parseDate(this.entries[j].tstamp);
-            if (artDate.month == i+1 && artDate.year == start.year) {accum++;}
+              let artDate = parseDate(this.entries[j].tstamp);
+              if (artDate.month == i+1 && artDate.year == start.year) {accum++;}
           }
         }
         Ydata.push(accum);
@@ -140,7 +141,7 @@ data = {
         for (let i=0; i<12; i++) {
           let accum = 0;
           for (let j=0; j<this.entries.length; j++) {
-            if (this.entries[j].tag.includes(tag)) {
+            if (this.entries[j].tag && this.entries[j].tag.includes(tag)) {
 
               let artDate = parseDate(this.entries[j].tstamp);
               if (artDate.month == i+1 && artDate.year == y) {accum++;}
@@ -156,7 +157,7 @@ data = {
       for (let i=0; i<end.month; i++) {
         let accum = 0;
         for (let j=0; j<this.entries.length; j++) {
-          if (this.entries[j].tag.includes(tag)) {
+          if (this.entries[j].tag && this.entries[j].tag.includes(tag)) {
 
             let artDate = parseDate(this.entries[j].tstamp);
             if (artDate.month == i+1 && artDate.year == end.year) {accum++;}

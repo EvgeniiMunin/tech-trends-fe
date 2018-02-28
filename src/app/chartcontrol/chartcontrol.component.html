@@ -4,3 +4,10 @@ From: <dp-date-picker mode='month' [(ngModel)]='from_date' (onChange)="printDate
 
 To :  <dp-date-picker mode='month' [(ngModel)]='to_date' (onChange)="printDates()"></dp-date-picker>
 
+<br>
+
+Company : <input [(ngModel)]="company_name">
+
+<button (click)="getAll()">Query</button>
+
+<button (click)="printDates()">Refresh</button>
