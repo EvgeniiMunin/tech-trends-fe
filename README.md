@@ -102,6 +102,8 @@ Reload Nginx:
 sudo nginx -s reload
 ```
 
+Modify the file */src/app/query.service.ts* and declare the URL to your backend as the variable `url`.
+
 Launch the test Angular server:
 ```
 nohup sudo ng serve --open &
