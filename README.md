@@ -12,21 +12,23 @@ See also the repositories for the whole project:
 This tool was developed for the project *Integrating Data Modelling, Data Management and Data Analysis in a Concurrent Engineering Environment*, proposed by the **CTO of Technology Planning and Roadmapping (XP)** at **Airbus**. It was done in the framework of the *Project Ingénierie et Entrepreneuriat* of the *Diplôme Ingénieur* at the university [ISAE-Supaéro](https://www.isae-supaero.fr/en/), France.
 
 ## Current and future functionalities
-Due to the work load restriction imposed by the university, the following functionalities were implemented: 
+Due to the work load restriction imposed by the university, the following functionalities were implemented:
+
 1. Automatically scrap news sources and institutional websites to get information related to topics of interest
 2. Format and collect the information into a Database
 3. Provide a user interface linked to the Database in order to visualize the information
- 
+
 leaving the following planned functionalities left for future work. Some hints at how to tackle them are proposed:
+
 4. Automatic tagging of articles
-    * Methods considered were *[Latent Dirichlet Allocation](https://arxiv.org/pdf/1711.04305.pdf)* and *[TextRank](https://web.eecs.umich.edu/%7Emihalcea/papers/mihalcea.emnlp04.pdf)*
-    * For the moment, tags are randomly assigned for front-end demonstration purposes.
+    - Methods considered were *[Latent Dirichlet Allocation](https://arxiv.org/pdf/1711.04305.pdf)* and *[TextRank](https://web.eecs.umich.edu/%7Emihalcea/papers/mihalcea.emnlp04.pdf)*
+    - For the moment, tags are randomly assigned for front-end demonstration purposes.
 5. Sentiment analysis
-    * [Andrew L. Maas](https://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf) proposes a method for polarity and subjectivity analysis using IMDB reviews as labeled data.
+    - [Andrew L. Maas](https://ai.stanford.edu/~amaas/papers/wvSent_acl2011.pdf) proposes a method for polarity and subjectivity analysis using IMDB reviews as labeled data.
 6. Exploration of other types of documents
-    * Academic articles
-    * Patents
-    * Social media posts
+    - Academic articles
+    - Patents
+    - Social media posts
 
 ## Architecture
 The project is composed by three interdependant modules, as well as a PostGreSQL database:
@@ -40,11 +42,9 @@ Automatically crawls and extracts content of target websited, formatting it and 
 
 It is based on the [Scrapy project](https://github.com/scrapy/scrapy), an open-source general purpose web crawling framework for automatic web exploration and data extraction. It provides with easily configurable pipelines and allows for database integration.
 
+The files describing the extraction procedure for each target are called *Spiders* and must be tailored to each website:
+
 ![scrapy1](https://github.com/sergira/tech-trends-fe/blob/master/readme_images/scrapy1.png)
-
-The files describing the extraction procedure for each target are called *Spiders* and must be tailored to each website. 
-
-![scrapy2](https://github.com/sergira/tech-trends-fe/blob/master/readme_images/scrapy2.png)
 
 For more information, refer to the [Scrapy project documentation website](https://doc.scrapy.org/en/latest/index.html).
 
@@ -52,6 +52,7 @@ For more information, refer to the [Scrapy project documentation website](https:
 Provides with a responsive chart displaying the monthly aggregation of news article entries, allowing for time interval selection, filtering by company and tag and reactive to mouse interaction.
 
 It has been developed on the `Angular` web framework, along with the plotting library `chart.js`.
+
 ![frontend](https://github.com/sergira/tech-trends-fe/blob/master/readme_images/frontend.png)
 
 ### Back-end
